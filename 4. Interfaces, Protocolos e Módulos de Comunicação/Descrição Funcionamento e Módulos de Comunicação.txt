@@ -1,0 +1,25 @@
+2.2	Componentes de Software:
+Arduino Integrated Development Environment – ou Arduino Software (IDE): contém um editor de texto para escrever código, uma área de mensagem, um console de texto, uma barra de ferramentas com botões para funções comuns e uma série de menus. Sendo assim, essa IDE foi escolhida este projeto Arduino, com as funções de fazer upload de programas e se comunicar com eles. Este componente será utilizado para o desenvolvimento do código da aplicação.
+
+Wokwi – O simulador Howe é uma opção gratuita, simples e muito poderosa para simular aplicações baseadas em Arduino (e outras plataformas, como ESP32 e Raspberry Pi Pico). Sem precisar instalar aplicativos no micro, o hardware é montado virtualmente. Este componente será utilizado para simular a aplicação no ambiente virtual e para o teste de integração do código desenvolvido, que visou garantir a validação do funcionamento da aplicação.
+
+Node-Red - Node-RED, é uma ferramenta visual de ambiente de código aberto, que inicialmente foi desenvolvida para implementar, criar e/ou conectar dispositivos de IoT, tendo sido estendida posteriormente para hardwares, APIs e web services. 	Dessa maneira, por meio dos nodes ou nós é possível ler arquivos CSV, escutar eventos http, tcp, websocket, twitter, mqtt entre outros. Este componente será utilizado para o consumo das mensagens de notificação do broker MQTT-Explorer e automaticamente o envio dessa informação para o Whatsapp dos números previamente parametrizados pelo administrador da aplicação.
+
+MQTT-Explorer - O MQTT Explorer é um cliente MQTT abrangente que fornece uma visão geral estruturada de tópicos MQTT e simplifica o trabalho com dispositivos/serviços IOT.  Este componente será utilizado para a postagem das mensagens de notificação que serão “trigadas” pelo componente de hardware sensor PIR, promovendo a comunicação com a internet e o Node-Red.
+
+HiveMQ - O HiveMQ é um corretor MQTT e uma plataforma de mensagens baseada em cliente projetada para a movimentação rápida, eficiente e confiável de dados de e para dispositivos IoT conectados. Ele usa o protocolo MQTT para envio instantâneo e bidirecional de dados entre seu dispositivo e sistemas corporativos. Este componente será utilizado como host de conexão no cliente MQTT-Explorer, promovendo a comunicação com a internet e o Node-Red.
+
+
+2.3	Funcionamento:
+
+1.Interfaces de rede: Modulo Wifi - ESP32
+O módulo WiFi consiste em um módulo cujo a função é conectar projetos e sistemas na internet através da rede Wirelles, para que o projeto possa ser acessado, controlado e adquirir informações de forma remota através de um chip, e o chip selecionado foi o ESP32.
+
+2. Conexão e Protocolo: A conexão com a Internet será feita através do Protocolo MQTT com suporte do Node-Red
+O Protocolo MQTT: Permite o envio de mensagens e comandos entre os dispositivos que falam MQTT por meio de TCP/IP. Será o protocolo oficial de comunicação para o projeto.
+Integração Arduino e servidor broker MQTT: A aplicação foi simulada virtualmente através do software Wokwi, onde os componentes de hardware apresentados neste documento foram corretamente inseridos e situados. Dessa maneira, assim que o componente sensor PIR é acionado, essa notificação será postada em um broker MQTT (tópico) via ESP32 que se comunicará com o Broker HiveMQ (situado no MQTT-Explorer), e através do software Node-Red ocorrerá uma subscrição nesse tópico que automaticamente irá realizar o consumo dessa mensagem de notificação através do nó MQTT In, que encaminhará essa mensagem para o Whatsapp dos números previamente parametrizados pelo administrador na aplicação. 
+Esse fluxo foi exemplificado visualmente na imagem 13.
+
+4. Interface: Não haverá uma interface dedicada ao monitoramento da aplicação, mas sim o acionamento do atuador Buzzer e Led, através do sensor de presença PIR e posteriormente a comunicação via protocolo MQTT para postagem da notificação de mensagem no Whatsapp dos números previamente parametrizados na aplicação Node-Red.
+
+OBS: PARA UMA MELHOR COMPREENSÃO DO QUADRO GERAL DA APLICAÇÃO, POR FAVOR ACESSO O ARTIGO DESENVOLVIDO, A DOCUMENTAÇÃO GERADA E O VÍDEO POSTADO QUE VISA ESCLARECER O FUNCIONAMENTO.

@@ -1,0 +1,9 @@
+1.Interfaces de rede: Modulo Wifi - ESP32
+O módulo WiFi consiste em um módulo cujo a função é conectar projetos e sistemas na internet através da rede Wirelles, para que o projeto possa ser acessado, controlado e adquirir informações de forma remota através de um chip, e o chip selecionado foi o ESP32.
+
+2. Conexão e Protocolo: A conexão com a Internet será feita através do Protocolo MQTT com suporte do Node-Red
+O Protocolo MQTT: Permite o envio de mensagens e comandos entre os dispositivos que falam MQTT por meio de TCP/IP. Será o protocolo oficial de comunicação para o projeto.
+Integração Arduino e servidor broker MQTT: A aplicação foi simulada virtualmente através do software Wokwi, onde os componentes de hardware apresentados neste documento foram corretamente inseridos e situados. Dessa maneira, assim que o componente sensor PIR é acionado, essa notificação será postada em um broker MQTT (tópico) via ESP32 que se comunicará com o Broker HiveMQ (situado no MQTT-Explorer), e através do software Node-Red ocorrerá uma subscrição nesse tópico que automaticamente irá realizar o consumo dessa mensagem de notificação através do nó MQTT In, que encaminhará essa mensagem para o Whatsapp dos números previamente parametrizados pelo administrador na aplicação. 
+Esse fluxo foi exemplificado visualmente na imagem 13.
+
+4. Interface: Não haverá uma interface dedicada ao monitoramento da aplicação, mas sim o acionamento do atuador Buzzer e Led, através do sensor de presença PIR e posteriormente a comunicação via protocolo MQTT para postagem da notificação de mensagem no Whatsapp dos números previamente parametrizados na aplicação Node-Red.

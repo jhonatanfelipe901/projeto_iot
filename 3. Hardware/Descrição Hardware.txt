@@ -1,0 +1,13 @@
+1 Protoboard: Protoboard ou matriz de contato é uma placa com diversos furos e conexões condutoras verticais e horizontais para a montagem de circuitos elétricos experimentais. Seu uso tem a vantagem de dispensar a soldagem. Este componente será utilizado para a montagem dos circuitos elétricos do projeto.
+ 
+1 Placa Arduino UNO R3: O Arduino Uno R3 é uma placa baseada no microcontrolador Tmega328 (datasheet). Ele tem 14 pinos de entrada/saída digital (dos quais 6 podem ser usados como saídas PWM), 6 entradas analógicas, um cristal oscilador de 16MHz, uma conexão USB, uma entrada de alimentação uma conexão ICSP e um botão de reset. Este componente será utilizado para o desenvolvimento do projeto.
+
+1 Sensor de PIR (Sensor): Um sensor infravermelho passivo é um sensor eletrônico que mede a luz infravermelha que irradia de objetos em seu campo de visão. Este componente será utilizado para identificar a presenças de uma ou mais pessoas no recinto onde está situado a aplicação.
+
+1 Led (Atuador): Utilizado para brilhar e servir como uma espécie de alarme para o recinto em questão. Este componente será utilizado para atuar como alarme no recinto onde está situado a aplicação.
+
+1 Buzzer (Atuador) – Um buzzer ou beeper é um dispositivo de sinalização de áudio, que pode ser mecânico, eletromecânico ou piezoelétrico. Este componente será utilizado para atuar como alarme no recinto situado.
+
+1 ESP32 (Módulo Wi-fi) – O módulo ESP32 é um módulo de alta performance para aplicações envolvendo Wi-fi, contando com um baixo consumo de energia. Com 4 MB de memória flash, o ESP32 permite criar aplicações comemorativas para projetos de IoT, acesso remoto, webservers e dataloggers, entre outros. Este componente será utilizado para comunicação com a internet via protocolo MQTT, por intermédio da comunicação com um Broker MQTT (HiveMQ).
+
+1 Resistor (Dispositivo): Resistores são dispositivos que compõem circuitos elétricos diversos, a sua finalidade básica é a conversão de energia elétrica em energia térmica (Efeito Joule). Este componente será utilizado para alterar a diferença de potencial em determinada parte do circuito.
